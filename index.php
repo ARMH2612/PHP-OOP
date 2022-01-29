@@ -1,8 +1,14 @@
 <?php
     class User {
         // properties
-        public $username = 'houssame';
-        public $email= 'houssame@gmail.com';
+        public $username ;
+        public $email;
+
+        // the Constructor methode:
+        public function __construct($username, $email) {
+            $this->username = $username;
+            $this->email = $email;
+        }
 
         // methodes:
         public function addFriend(){
@@ -10,9 +16,10 @@
         }
     }
 
-    $user1 = new User();
-    $user2 = new User();
-
+    // $user1 = new User();
+    // $user2 = new User();
+    $user1 = new User('Rahiche Messaoud','someEmail@gmail.com');
+    
     echo $user1->email."<br />";
     echo $user1->addFriend()."<br />";
     
@@ -23,8 +30,10 @@
 
     // changing class' properties values:
     // methode 1:
-    $user1->username = "<br />Rahiche Houssame";
-    echo $user1->username;
+    // $user1->username = "<br />Rahiche Houssame";
+    // echo $user1->username;
+
+    // methode2: Constructor methode
 ?>
 
 <!DOCTYPE html>
