@@ -1,8 +1,8 @@
 <?php
     class User {
         // properties
-        public $username ;
-        public $email;
+        private $username ;
+        private $email;
 
         // the Constructor methode:
         public function __construct($username, $email) {
@@ -20,13 +20,13 @@
     // $user2 = new User();
     $user1 = new User('Rahiche Messaoud','someEmail@gmail.com');
     
-    echo $user1->email."<br />";
-    echo $user1->addFriend()."<br />";
+    // echo $user1->email."<br />";
+    // echo $user1->addFriend()."<br />";
     
     // to get class' properties:
-    print_r(get_class_vars('User'));
-    echo '<br />';
-    print_r(get_class_methods('User'));
+    // print_r(get_class_vars('User'));
+    // echo '<br />';
+    // print_r(get_class_methods('User'));
 
     // changing class' properties values:
     // methode 1:
@@ -34,6 +34,9 @@
     // echo $user1->username;
 
     // methode2: Constructor methode
+
+    // access modifiers:
+        // in php called -> visibility modifiers : private public ..etc
 ?>
 
 <!DOCTYPE html>
