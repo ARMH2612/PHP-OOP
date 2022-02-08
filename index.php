@@ -29,10 +29,29 @@
         }
     }
 
+    class AdminUser extends User {
+        private $level;
+
+        public function __construct($username,$email,$level){
+            parent::__construct($username,$email);
+            $this->level = $level;
+        }
+
+        public function getLevel(){
+            return $this->level;
+        }
+
+        public function setLevel($level){
+            $this->level = $level;
+        }
+    }
+
     // $user1 = new User();
     // $user2 = new User();
     $user1 = new User('Rahiche Messaoud','someEmail@gmail.com');
-    
+    $user3 = new AdminUser('Houssame', 'adminEmail@gmail.com',3);
+    echo $user3->getEmail() . ' level : '. $user3->getLevel() .'<br>';
+
     // echo $user1->email."<br />";
     // echo $user1->addFriend()."<br />";
     
