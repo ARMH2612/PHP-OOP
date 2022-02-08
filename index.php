@@ -1,8 +1,8 @@
 <?php
     class User {
         // properties
-        private $username ;
-        private $email;
+        protected $username ;
+        protected $email;
         public $role = 'member';
 
         // the Constructor methode:
@@ -52,7 +52,7 @@
         }
 
         public function sendMessage(){
-            return "$this->role sent an email";
+            return "$this->email, $this->role sent an email";
         }
     }
 
