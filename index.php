@@ -14,6 +14,19 @@
         public function addFriend(){
             return $this->username." added a new friend";
         }
+
+
+        // getters
+        public function getEmail(){
+            return $this->email;
+        }
+
+        // setters
+        public function setEmail($email){
+            if(strpos($email, '@') > -1){
+                $this->email = $email;
+            }
+        }
     }
 
     // $user1 = new User();
@@ -37,6 +50,8 @@
 
     // access modifiers:
         // in php called -> visibility modifiers : private public ..etc
+    
+    
 ?>
 
 <!DOCTYPE html>
