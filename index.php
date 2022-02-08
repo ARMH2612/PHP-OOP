@@ -3,6 +3,7 @@
         // properties
         private $username ;
         private $email;
+        public $role = 'member';
 
         // the Constructor methode:
         public function __construct($username, $email) {
@@ -13,6 +14,10 @@
         // methodes:
         public function addFriend(){
             return $this->username." added a new friend";
+        }
+
+        public function sendMessage(){
+            return "$this->email sent an email";
         }
 
 
@@ -31,6 +36,7 @@
 
     class AdminUser extends User {
         private $level;
+        public $role = 'admin';
 
         public function __construct($username,$email,$level){
             parent::__construct($username,$email);
@@ -44,13 +50,20 @@
         public function setLevel($level){
             $this->level = $level;
         }
+
+        public function sendMessage(){
+            return "$this->role sent an email";
+        }
     }
 
     // $user1 = new User();
     // $user2 = new User();
     $user1 = new User('Rahiche Messaoud','someEmail@gmail.com');
+    echo $user1->sendMessage().'<br>';
     $user3 = new AdminUser('Houssame', 'adminEmail@gmail.com',3);
     echo $user3->getEmail() . ' level : '. $user3->getLevel() .'<br>';
+    echo $user3->sendMessage().'<br>';
+
 
     // echo $user1->email."<br />";
     // echo $user1->addFriend()."<br />";
