@@ -11,6 +11,15 @@
             $this->email = $email;
         }
 
+
+        public function __destruct() {
+            echo "the user $this->username has been deleted <br />";
+        }
+
+        public function __clone() {
+            $this->username = $this->username." (cloned)";
+        }
+
         // methodes:
         public function addFriend(){
             return $this->username." added a new friend";
@@ -63,6 +72,12 @@
     $user3 = new AdminUser('Houssame', 'adminEmail@gmail.com',3);
     echo $user3->getEmail() . ' level : '. $user3->getLevel() .'<br>';
     echo $user3->sendMessage().'<br>';
+
+    // clone objects:
+    $userClone = clone $user3;
+
+    // delete the reference to an object from a variable
+    // unset($user1);
 
 
     // echo $user1->email."<br />";
